@@ -142,3 +142,35 @@ def test_pretrainer_objective_is_finite_and_differentiable() -> None:
     assert torch.isfinite(result['loss'])
     result['loss'].backward()
     assert any(p.grad is not None and torch.isfinite(p.grad).all() for p in model.parameters())
+
+
+def test_dataset_rejects_a_bundle_that_breaks_the_contract(tmp_path) -> None:
+    from oamae.data import BundleContractError, ChangeDataset
+
+    path = tmp_path / 'SCN_dak_0001.npz'
+    np.savez_compressed(path, s2_rgb_t1=np.zeros((96, 96, 3), dtype=np.float32))
+    dataset = ChangeDataset([path], small_config())
+    with pytest.raises(BundleContractError, match='missing'):
+        dataset[0]
+
+
+def test_dataset_reads_a_conforming_bundle(tmp_path) -> None:
+    from oamae.data import ChangeDataset
+
+    cfg = small_config()
+    size = cfg.image_size
+    path = tmp_path / 'SCN_dak_0001.npz'
+    np.savez_compressed(
+        path,
+        optical_t1=np.zeros((10, size, size), dtype=np.float32),
+        optical_t2=np.zeros((10, size, size), dtype=np.float32),
+        radar_t1=np.zeros((2, size, size), dtype=np.float32),
+        radar_t2=np.zeros((2, size, size), dtype=np.float32),
+        cloud_t1=np.zeros((size, size), dtype=np.float32),
+        cloud_t2=np.zeros((size, size), dtype=np.float32),
+        reference=np.zeros((size, size), dtype=np.uint8),
+    )
+    item = ChangeDataset([path], cfg)[0]
+    assert item['sample_id'] == 'SCN_dak_0001'
+    assert item['optical_t1'].shape == (10, size, size)
+    assert item['reference'].shape == (size, size)
