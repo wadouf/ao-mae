@@ -1,0 +1,7 @@
+{
+  "n_tiles": 240,
+  "delta_iou_mean": 0.0307,
+  "delta_ci_low": 0.0283,
+  "delta_ci_high": 0.0332,
+  "share_positive": 0.946
+}

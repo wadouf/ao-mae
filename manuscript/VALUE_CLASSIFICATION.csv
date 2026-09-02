@@ -1,0 +1,41 @@
+key,value,classification,source
+oa_iou_k25,0.316,point_estimate,results/values.json: OAMAEIoUTwentyFive
+croma_iou_k25,0.289,point_estimate,results/values.json: CROMAIoUTwentyFive
+primary_delta_iou,0.027,point_estimate,results/values.json: PrimaryDelta
+primary_delta_ci_low,0.024,confidence_interval_bound,results/values.json: PrimaryDeltaCILow
+primary_delta_ci_high,0.030,confidence_interval_bound,results/values.json: PrimaryDeltaCIHigh
+city_cluster_p_value,0.031,point_estimate,results/values.json: PrimaryCityPValue
+positive_cities,6/6,point_estimate,results/values.json: PrimaryPositiveCities
+coverage_tau_085,0.620,point_estimate,benchmark_abstention_risk.csv
+positive_coverage_tau_085,0.570,point_estimate,benchmark_abstention_risk.csv
+unresolved_positive_mass_tau_085,0.430,point_estimate,benchmark_abstention_risk.csv
+conditional_precision_tau_085,0.740,point_estimate,benchmark_abstention_risk.csv
+conditional_recall_tau_085,0.660,point_estimate,benchmark_abstention_risk.csv
+end_to_end_recall_no_followup,0.376,point_estimate,benchmark_abstention_risk.csv
+end_to_end_recall_human_review,0.712,policy_scenario_estimate,benchmark_abstention_risk.csv
+end_to_end_recall_sar_fallback,0.514,policy_scenario_estimate,benchmark_abstention_risk.csv
+end_to_end_recall_reacquisition,0.613,policy_scenario_estimate,benchmark_abstention_risk.csv
+proposal_recall_clear_regular,0.874,point_estimate,benchmark_proposal_audit.csv
+proposal_precision_clear_regular,0.880,point_estimate,benchmark_proposal_audit.csv
+proposal_recall_heavy_cloud,0.742,point_estimate,benchmark_proposal_audit.csv
+proposal_precision_heavy_cloud,0.860,point_estimate,benchmark_proposal_audit.csv
+proposal_recall_texture_complex,0.799,point_estimate,benchmark_proposal_audit.csv
+proposal_precision_texture_complex,0.858,point_estimate,benchmark_proposal_audit.csv
+proposal_recall_informal_small_roofs,0.612,point_estimate,benchmark_proposal_audit.csv
+proposal_precision_informal_small_roofs,0.812,point_estimate,benchmark_proposal_audit.csv
+cloud_threshold,0.85,methodological_constant,fixed method specification
+cloud_refinement_trigger,0.20,methodological_constant,fixed method specification
+cloud_refinement_coefficient,0.30,methodological_constant,fixed method specification
+token_size,16 x 16 pixels,methodological_constant,fixed method specification
+top_k,3,methodological_constant,fixed method specification
+recency_days,90,methodological_constant,fixed method specification
+mask_ratio,0.75,methodological_constant,fixed method specification
+fusion_blocks,4,methodological_constant,fixed method specification
+binary_threshold,0.50,methodological_constant,fixed method specification
+primary_few_shot_k,25 per source city,methodological_constant,fixed method specification
+seeds,10,methodological_constant,fixed method specification
+cities,6,methodological_constant,fixed method specification
+few_shot_settings,10;25;50,sensitivity_setting,prespecified sensitivity analysis
+recency_settings,30;60;90;120;unbounded,sensitivity_setting,prespecified sensitivity analysis
+retrieval_depth_settings,1;3;5;10,sensitivity_setting,prespecified sensitivity analysis
+cloud_threshold_settings,0.75;0.85;0.95,sensitivity_setting,prespecified sensitivity analysis

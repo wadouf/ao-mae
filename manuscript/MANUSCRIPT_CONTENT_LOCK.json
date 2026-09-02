@@ -1,0 +1,36 @@
+{
+  "generated_utc": "2026-08-22T12:12:09.359634+00:00",
+  "files": {
+    "main.tex": "308b14db5bfd92bdf09f58d0d31307592a9e4e2889f6684d2a6d1199828c83ea",
+    "supplementary.tex": "9310bc590492c26ae8ee9b9153445acaa00ca3d15e3a82f5307d670b9e561048",
+    "response_to_reviewers.tex": "9436d0d4c69e0139ae7f575279fa792d84168f85016d42a545da906b5b983554",
+    "revision_strategy.tex": "02bf850a1f438bda2195bdc1f4025b9f8d4b5df0fd0078f89ae5674feb4389bf",
+    "references.bib": "8f4ee7361af1ccf0dda0b64c0475ff9acd4d522b1a4f05cc27f191147d1b08c2",
+    "results/values.tex": "a70de01b22fa3fa8d3b50dcb1a0627702494888917ded5f14cd53e12203ab343",
+    "results/values.json": "a07b3f9ec115ec48889510ddcf562e7cdf15b02f3fdd5071ce6c031827edde8b",
+    "REVIEWER_COVERAGE_MATRIX.csv": "5fb86827db180d719d9bf44953392af1cc9001e6d448dae2a36a46e689c22b05",
+    "VALUE_CLASSIFICATION.csv": "f6ccc4f3dd0a7100304d4c443232c453733186eb21bbd60b7a6f3da1b85c82de"
+  },
+  "figure_count": 18,
+  "figure_files": {
+    "figures/figure1_oamae_overview.pdf": "8f69fbc5bb307e1f6ad27e7c0af1b61156da055abf442e2bb1594ae83389c08b",
+    "figures/figure1_oamae_overview.png": "e111ae6e4d4221ddb26515be4eb4c92f8be7fe2b610bb5ab3a5c3dcf99e6f8f0",
+    "figures/figure2_observable_support.pdf": "82c2a231a99991698369884907e279f7f27de5899d4ff09c6d503120aaa37896",
+    "figures/figure2_observable_support.png": "5d1e6fc1a99360d378f0e61a7900eeb4ff840a34492fa29e13113b21c5505aa2",
+    "figures/figure3_cloud_burden_gain.pdf": "3d3a2dbef71f8ef3fa05db85632c037d30b495edd51478c297423e2619081366",
+    "figures/figure4_label_noise_robustness.pdf": "fab021151809d9033b3d18d53f4c2da7a60ec2e1dedaf2cc129dfaf6d02d7b58",
+    "figures/figure5_abstention_policy.pdf": "99b27ba927288c803e5fd5f6886d07acb7864391abba1f24735a3a2178df8eb7",
+    "figures/figure6_severe_cloud_qualitative.pdf": "b6b92629b3360b036280a0128d243eb1ed4762be81d86d6c9dfbe0b41ffc1270",
+    "figures/figure7_gate_mechanism.pdf": "5479a69838d3b6ca87c77014e328c5e7a7adfc7325e77892977d5e862a450266",
+    "figures/figureS1_observability_diagnostics.pdf": "f940c0be750b62a7999ab21fa43e7301bd706a0a2b0282af45e560d74716b550",
+    "figures/figureS2_past_only_retrieval.pdf": "5ede9bc3a51a6c72abda6c0f9f91b81849ce3caca10d0a927baed8978a102cda",
+    "figures/figureS3_proposal_annotation_audit.pdf": "8588028e6958566c862348d34511f08844cea9b2070be157b3b4df78d7a9ee5b",
+    "figures/figureS4_failure_taxonomy.pdf": "cc9b1a194dabd3d562c962a06c61e4fbb1fd2b7045cc3a13d0bee1edeb8298c0",
+    "figures/figureS5_intercity_contact_sheet.pdf": "379f293a9c615dc316e1e9bc1daeeaba66246a4c23710e8e45e35ea0c14b382a",
+    "figures/figureS6_city_scene_atlas_part1.pdf": "bcb16d409939a2a023d42a12b8863f50d868f20418f43b6e541f7648d2ad1b5a",
+    "figures/figureS6_city_scene_atlas_part1.png": "47528157a8f059f62fa3e0fba42df86e8337e484e186597e906adfcedb08467d",
+    "figures/figureS6_city_scene_atlas_part2.pdf": "2fc5f5263bfc4bf026f6cd069422f2e4b83444d9fc3a81fc07d53519d2facd3f",
+    "figures/figureS6_city_scene_atlas_part2.png": "922944f9a04b95369874b40bd41adf948be7486ead82c740d2b6df1ae5997307"
+  },
+  "repository": "https://github.com/wadouf/ao-mae"
+}

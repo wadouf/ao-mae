@@ -18,6 +18,7 @@ The formulation of the method — external cloud support, gated optical-SAR fusi
 ├── tests/                   # contract and figure-policy tests
 ├── reference_data/          # experiment data: benchmark records, scenes, predictions, figures
 ├── reference_complements/   # derived deterministic fields, annotations, checkpoint metadata
+├── manuscript/              # frozen source tables and the scripts that derive manuscript values
 ├── outputs/                 # figures, tables, logs, release artifacts
 └── package_manifests/       # manifests and SHA-256 checksums
 ```
@@ -80,6 +81,18 @@ Stage 04 writes standardized scene bundles under `data/processed/scene_bundles/`
 
 `reference_data/` holds the experiment outputs: 600 benchmark samples, leave-one-city-out folds over Dakar, Dar es Salaam, Douala, Garoua, Kigali and Yaounde, few-shot registries for K = 10, 25 and 50, run records, predictions, metrics, annotation audit assets, and the QF1 to QF7 figures. `reference_complements/` adds the deterministic fields derived from those arrays — refined cloud maps, visibility masks, the 16 by 16 support computation, gates, unresolved-positive maps and error maps — documented per record in `reference_complements/manifests/`.
 
+## Manuscript values
+
+Every number reported in the paper is derived from the frozen tables under `manuscript/results/source_tables/`, which are byte-identical to the corresponding tables in `reference_data/experiment_benchmark/results/`.
+
+```bash
+python manuscript/scripts/build_values.py
+```
+
+This regenerates `manuscript/results/values.json`, `values.tex`, `macro_map.json` and `source_map.csv` — 187 values in total. `source_map.csv` maps each manuscript macro to the exact source table it comes from, and `VALUE_CLASSIFICATION.csv` records whether a value is a point estimate, a confidence-interval bound, or a derived quantity.
+
+`manuscript/scripts/verify_results_release.py` checks that a release directory exposes the required figures and value files. `manuscript/checksums/SHA256SUMS.txt` holds the checksums of the archived manuscript package.
+
 ## Figures
 
 Figure geometry, panel order, typography and physical dimensions are specified in [`FIGURE_SPECIFICATION.md`](FIGURE_SPECIFICATION.md) and [`FIGURE_DIMENSIONS.csv`](FIGURE_DIMENSIONS.csv), and enforced by `scripts/validate_figure_dimensions.py` and `tests/test_figure_policy.py`.
@@ -97,4 +110,6 @@ pytest tests/
 
 ## Citation
 
-If you use this code, please cite the accompanying paper.
+Wadoufey, A., Bayang Souloukna, P., Namekong Dagha, S., Dayang, P., Kolyang, and Ngakou, A.
+*OA-MAE: Observability-Aligned Multimodal Self-Supervised Learning for Reliable Urban Change Detection under Partial Observability.*
+EAI Endorsed Transactions.
