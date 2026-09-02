@@ -1,0 +1,74 @@
+{
+  "collection_name": "OA-MAE experiment data",
+  "created_at_utc": "2026-08-21T12:18:03Z",
+  "manifest_scope": "all files outside the manifests directory",
+  "groups": [
+    {
+      "path": "experiment_benchmark",
+      "contents": [
+        "sample registry",
+        "labels",
+        "test scene arrays",
+        "cloud arrays",
+        "folds",
+        "few-shot selections",
+        "run records",
+        "run logs",
+        "checkpoint metadata",
+        "predictions",
+        "metrics",
+        "retrieval records",
+        "annotation records",
+        "compute tables",
+        "quantitative figures"
+      ]
+    },
+    {
+      "path": "qualitative_benchmark",
+      "contents": [
+        "urban scene arrays",
+        "method prediction arrays",
+        "retrieval arrays",
+        "sample registry",
+        "prediction metrics",
+        "selection manifests",
+        "QF1 to QF7 figures",
+        "city scene atlas"
+      ]
+    },
+    {
+      "path": "validation",
+      "contents": [
+        "data validation record",
+        "content scan record"
+      ]
+    }
+  ],
+  "combined_figure_file": "OA_MAE_ALL_REFERENCE_FIGURES.pdf",
+  "counts": {
+    "experiment_samples": 600,
+    "labeled_experiment_samples": 420,
+    "unlabeled_pretraining_samples": 180,
+    "experiment_test_array_bundles": 72,
+    "experiment_label_arrays": 420,
+    "experiment_cloud_arrays": 144,
+    "folds": 6,
+    "fewshot_assignment_rows": 5100,
+    "run_records": 720,
+    "run_logs": 720,
+    "checkpoint_metadata_records": 720,
+    "model_weight_files": 0,
+    "experiment_prediction_rows": 288,
+    "experiment_metric_rows": 288,
+    "retrieval_rows": 288,
+    "audit_tiles": 240,
+    "change_records": 701,
+    "proposal_records": 619,
+    "reference_scene_bundles": 72,
+    "reference_prediction_rows": 288,
+    "reference_metric_rows": 288,
+    "qualitative_figure_families": 7,
+    "qualitative_figure_pages": 8,
+    "combined_figure_pages": 12
+  }
+}

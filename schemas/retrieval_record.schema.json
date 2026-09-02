@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OA-MAE retrieval record contract",
+  "type": "object",
+  "required": [
+    "sample_id",
+    "current_time",
+    "token_id",
+    "candidate_product_ids",
+    "candidate_times",
+    "candidate_ages_days",
+    "selected_indices",
+    "fallback",
+    "safety_weight"
+  ],
+  "properties": {
+    "sample_id": {
+      "type": "string"
+    },
+    "current_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "token_id": {
+      "type": "string"
+    },
+    "candidate_product_ids": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "candidate_times": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "candidate_ages_days": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "maximum": 90
+      }
+    },
+    "selected_indices": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "fallback": {
+      "type": "boolean"
+    },
+    "safety_weight": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1.0
+    }
+  },
+  "additionalProperties": true
+}

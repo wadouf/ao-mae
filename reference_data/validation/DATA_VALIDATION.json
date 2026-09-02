@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-08-21T12:18:02Z",
+  "file_count": 4839,
+  "extension_counts": {
+    ".csv": 67,
+    ".geojson": 1320,
+    ".json": 754,
+    ".jsonl": 720,
+    ".log": 1,
+    ".npz": 1743,
+    ".pdf": 14,
+    ".png": 12,
+    ".txt": 208
+  },
+  "dataset_counts": {
+    "experiment_samples": 600,
+    "folds": 6,
+    "fewshot_rows": 5100,
+    "runs": 720,
+    "checkpoint_metadata_records": 720,
+    "experiment_prediction_rows": 288,
+    "retrieval_rows": 288,
+    "audit_tiles": 240,
+    "change_records": 701,
+    "proposal_records": 619,
+    "qualitative_scenes": 72,
+    "qualitative_prediction_rows": 288,
+    "qualitative_figure_pages": 8,
+    "complete_figure_pages": 12
+  },
+  "passed_check_instances": 28796,
+  "errors": [],
+  "warnings": []
+}

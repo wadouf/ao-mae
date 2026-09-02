@@ -1,0 +1,8 @@
+{
+  "K": 10,
+  "config_hash": "cfg_SCN_e0b94a24",
+  "epochs_stage2": 60,
+  "global_seed": 20260727,
+  "lr_stage2": 0.001,
+  "method": "CROMA"
+}

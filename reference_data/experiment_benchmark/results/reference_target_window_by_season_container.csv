@@ -1,0 +1,11 @@
+window_days,season,target_availability,fallback_rate,median_target_age_days,n_anchor_token
+30,wet,0.8333,0.1667,20.0,288
+30,dry,0.7083,0.2917,20.0,384
+60,wet,1.0,0.0,20.0,288
+60,dry,0.9167,0.0833,20.0,384
+90,wet,1.0,0.0,20.0,288
+90,dry,0.9167,0.0833,20.0,384
+120,wet,1.0,0.0,20.0,288
+120,dry,0.9167,0.0833,20.0,384
+unbounded,wet,1.0,0.0,20.0,288
+unbounded,dry,0.9167,0.0833,20.0,384

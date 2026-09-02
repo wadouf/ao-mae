@@ -1,0 +1,23 @@
+methods:
+  OA_MAE:
+    repository_env: OA_MAE_REPOSITORY
+    checkpoint_root_env: OA_MAE_CHECKPOINT_ROOT
+    adapter: python_module
+    module: oamae.inference
+    callable: predict_batch
+  CROMA:
+    repository_env: CROMA_REPOSITORY
+    checkpoint_root_env: CROMA_CHECKPOINT_ROOT
+    adapter: python_module
+    module: croma_adapter.inference
+    callable: predict_batch
+  Hafner_SSMMCD:
+    repository_env: HAFNER_REPOSITORY
+    checkpoint_root_env: HAFNER_CHECKPOINT_ROOT
+    adapter: python_module
+    module: hafner_adapter.inference
+    callable: predict_batch
+  UNet_S1S2:
+    adapter: internal_reference
+  UNet_S2:
+    adapter: internal_reference

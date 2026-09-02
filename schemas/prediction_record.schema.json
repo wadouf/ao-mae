@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["method", "sample_id", "checkpoint_sha256", "code_commit", "probability_path", "binary_path", "threshold"],
+  "properties": {
+    "method": {"type": "string"},
+    "sample_id": {"type": "string"},
+    "checkpoint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "code_commit": {"type": "string", "minLength": 7},
+    "probability_path": {"type": "string"},
+    "binary_path": {"type": "string"},
+    "threshold": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,49 @@
+{
+  "bootstrap_draws": 50000,
+  "cities": {
+    "Dakar": {
+      "cloud": 0.25,
+      "difficulty": 0.08
+    },
+    "DarEsSalaam": {
+      "cloud": 0.65,
+      "difficulty": -0.22
+    },
+    "Douala": {
+      "cloud": 0.72,
+      "difficulty": -0.28
+    },
+    "Garoua": {
+      "cloud": 0.35,
+      "difficulty": -0.05
+    },
+    "Kigali": {
+      "cloud": 0.5,
+      "difficulty": -0.1
+    },
+    "Yaounde": {
+      "cloud": 0.58,
+      "difficulty": -0.18
+    }
+  },
+  "confirmatory_inference_unit": "city",
+  "label_budgets": [
+    10,
+    25,
+    50
+  ],
+  "methods": [
+    "UNet_S2",
+    "UNet_S1S2",
+    "CROMA",
+    "OA_MAE"
+  ],
+  "secondary_corruption_families": [
+    "positive_deletion",
+    "false_positive_insertion",
+    "boundary_shift",
+    "erosion",
+    "dilation"
+  ],
+  "seed": 20260727
+}

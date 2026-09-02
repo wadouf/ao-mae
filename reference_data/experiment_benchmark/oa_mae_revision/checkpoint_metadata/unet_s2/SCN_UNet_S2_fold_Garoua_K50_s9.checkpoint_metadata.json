@@ -1,0 +1,11 @@
+{
+  "K": 50,
+  "artifact_type": "checkpoint_metadata_record",
+  "best_epoch": 54,
+  "fold": "fold_Garoua",
+  "method": "UNet_S2",
+  "seed": 9,
+  "selection_metric": "val_iou",
+  "selection_value": 0.24486231,
+  "weights_present": false
+}

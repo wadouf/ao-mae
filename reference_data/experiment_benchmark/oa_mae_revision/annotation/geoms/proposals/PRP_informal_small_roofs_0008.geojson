@@ -1,0 +1,37 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          0.3457788975271396,
+          0.7282162824785336
+        ],
+        [
+          0.3643312965235672,
+          0.7282162824785336
+        ],
+        [
+          0.3643312965235672,
+          0.7467686814749613
+        ],
+        [
+          0.3457788975271396,
+          0.7467686814749613
+        ],
+        [
+          0.3457788975271396,
+          0.7282162824785336
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "id": "PRP_informal_small_roofs_0008",
+  "properties": {
+    "feature_type": "proposal",
+    "matched_change_id": "CHG_informal_small_roofs_0011",
+    "stratum": "informal_small_roofs",
+    "tile_id": "AUD_informal_small_roofs_011"
+  },
+  "type": "Feature"
+}

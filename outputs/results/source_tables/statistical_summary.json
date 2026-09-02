@@ -1,0 +1,6 @@
+{
+  "bootstrap_draws": 50000,
+  "label_noise_families": 5,
+  "main_summary": "city-cluster bootstrap",
+  "primary_comparison": "city-cluster bootstrap"
+}

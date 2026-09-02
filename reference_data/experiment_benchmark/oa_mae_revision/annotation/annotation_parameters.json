@@ -1,0 +1,31 @@
+{
+  "double_annotation": true,
+  "geometry_coordinate_system": "normalized_tile_coordinates_0_to_1",
+  "seed": 20260727,
+  "strata": {
+    "clear_regular": {
+      "events": 159,
+      "precision": 0.88,
+      "recall": 0.874,
+      "tiles": 60
+    },
+    "heavy_cloud": {
+      "events": 198,
+      "precision": 0.86,
+      "recall": 0.742,
+      "tiles": 60
+    },
+    "informal_small_roofs": {
+      "events": 170,
+      "precision": 0.812,
+      "recall": 0.612,
+      "tiles": 60
+    },
+    "texture_complex": {
+      "events": 174,
+      "precision": 0.858,
+      "recall": 0.799,
+      "tiles": 60
+    }
+  }
+}

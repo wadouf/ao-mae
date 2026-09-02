@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OA-MAE observed scene bundle contract",
+  "type": "object",
+  "required": [
+    "sample_id",
+    "optical_t1",
+    "optical_t2",
+    "radar_t1",
+    "radar_t2",
+    "cloud_t1",
+    "cloud_t2",
+    "v12",
+    "reference"
+  ],
+  "properties": {
+    "sample_id": {
+      "type": "string"
+    },
+    "optical_t1": {
+      "type": "string",
+      "description": "Path to float32 10xHxW observed reflectance array"
+    },
+    "optical_t2": {
+      "type": "string"
+    },
+    "radar_t1": {
+      "type": "string",
+      "description": "Path to float32 2xHxW VV/VH array"
+    },
+    "radar_t2": {
+      "type": "string"
+    },
+    "cloud_t1": {
+      "type": "string"
+    },
+    "cloud_t2": {
+      "type": "string"
+    },
+    "v12": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "crs": {
+      "type": "string"
+    },
+    "transform": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "number"
+      }
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sha256": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

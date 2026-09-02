@@ -1,0 +1,100 @@
+project:
+  name: oamae_observed_sentinel_figures
+  study_start: 2019-01-01
+  study_end: 2024-12-31
+  random_seed: 20260824
+  output_root: outputs
+  reference_root: reference_data
+  complement_root: reference_complements
+  repository_url: https://github.com/wadouf/ao-mae
+
+access:
+  primary_backend: earth_engine
+  fallback_backend: copernicus_data_space
+  earth_engine_project_env: EARTHENGINE_PROJECT
+  cloud_bucket_env: GOOGLE_CLOUD_BUCKET
+  cdse_stac_url: https://stac.dataspace.copernicus.eu/v1/
+  cdse_process_url: https://sh.dataspace.copernicus.eu/process/v1
+
+spatial:
+  tile_size_pixels: 256
+  pixel_size_m: 10
+  tile_size_m: 2560
+  boundary_transition_buffer_km: 5
+  minimum_city_intersection: 0.90
+  figure_tiles_per_city: 12
+  crs_policy: local_utm_per_tile
+
+sentinel2:
+  collection: COPERNICUS/S2_SR_HARMONIZED
+  cloud_collection: COPERNICUS/S2_CLOUD_PROBABILITY
+  bands: [B02, B03, B04, B05, B06, B07, B08, B8A, B11, B12]
+  scale_factor: 0.0001
+  rgb_bands: [B04, B03, B02]
+  rgb_display_policy: paired_percentile
+  rgb_percentiles: [2, 98]
+
+sentinel1:
+  collection: COPERNICUS/S1_GRD
+  instrument_mode: IW
+  polarizations: [VV, VH]
+  maximum_pair_gap_days: 6
+  require_same_orbit_direction: true
+  require_same_relative_orbit_for_confirmatory_pairs: true
+  display_vv_db: [-25, 0]
+  display_vh_db: [-32, -5]
+
+cloud_support:
+  token_size_pixels: 16
+  seed_threshold: 0.20
+  refinement_delta: 0.30
+  hard_threshold: 0.85
+  sensitivity_thresholds: [0.75, 0.85, 0.95]
+
+labels:
+  temporal_collection: GOOGLE/Research/open-buildings-temporal/v1
+  temporal_available_start_year: 2016
+  temporal_available_end_year: 2023
+  footprint_collection: GOOGLE/Research/open-buildings_v3_polygons
+  minimum_component_area_m2: 200
+  minimum_presence_after: 0.50
+  maximum_presence_before: 0.25
+  minimum_presence_increase: 0.25
+  minimum_t1_t2_gap_days: 180
+  polygon_buffer_m: 3
+  opening_kernel_pixels: 3
+  require_two_annotators: true
+  require_adjudication: true
+
+retrieval:
+  maximum_age_days: 90
+  maximum_candidates_per_token: 3
+  safety_floor: 0.10
+  safety_coefficient: 10.0
+
+splits:
+  protocol: leave_one_city_out
+  few_shot_k: [10, 25, 50]
+  seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+inference:
+  probability_threshold: 0.50
+  batch_size: 8
+  precision: float32
+  save_probability_maps: true
+  save_binary_maps: true
+  save_model_gates: true
+  save_retrieval_records: true
+
+statistics:
+  bootstrap_replicates: 50000
+  primary_cluster: city
+  confidence_level: 0.95
+
+figures:
+  contract: config/figure_contract.yaml
+  visible_language: English
+  ascii_hyphens_only: true
+  vector_pdf: true
+  editable_svg: true
+  minimum_png_dpi: 300

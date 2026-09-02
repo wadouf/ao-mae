@@ -1,0 +1,17 @@
+{
+  "K": 25,
+  "method_a": "OA_MAE",
+  "method_b": "CROMA",
+  "delta_iou_mean": 0.027,
+  "delta_iou_ci_low": 0.027,
+  "delta_iou_ci_high": 0.027,
+  "probability_positive_delta": 1.0,
+  "n_paired_runs": 60,
+  "n_cities": 6,
+  "ci_method": "city-cluster bootstrap, B=2000, percentile",
+  "per_K_delta_mean": {
+    "10": 0.024,
+    "25": 0.027,
+    "50": 0.025
+  }
+}

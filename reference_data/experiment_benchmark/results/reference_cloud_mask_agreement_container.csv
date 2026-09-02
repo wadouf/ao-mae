@@ -1,0 +1,4 @@
+pixel_agreement,positive_pixel_agreement,product_a,product_b,support_jaccard
+0.5,0.6667,CloudS2Mask,CloudSEN12,0.5
+1.0,1.0,CloudS2Mask,S2_CLOUD_PROBABILITY,1.0
+0.5,0.6667,CloudSEN12,S2_CLOUD_PROBABILITY,0.5

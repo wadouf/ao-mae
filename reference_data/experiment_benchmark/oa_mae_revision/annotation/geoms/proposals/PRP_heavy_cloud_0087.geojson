@@ -1,0 +1,37 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          0.1659190576625988,
+          0.6885464100805112
+        ],
+        [
+          0.20161552995466628,
+          0.6885464100805112
+        ],
+        [
+          0.20161552995466628,
+          0.7242428823725787
+        ],
+        [
+          0.1659190576625988,
+          0.7242428823725787
+        ],
+        [
+          0.1659190576625988,
+          0.6885464100805112
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "id": "PRP_heavy_cloud_0087",
+  "properties": {
+    "feature_type": "proposal",
+    "matched_change_id": "CHG_heavy_cloud_0111",
+    "stratum": "heavy_cloud",
+    "tile_id": "AUD_heavy_cloud_051"
+  },
+  "type": "Feature"
+}

@@ -1,0 +1,11 @@
+{
+  "K": 10,
+  "artifact_type": "checkpoint_metadata_record",
+  "best_epoch": 40,
+  "fold": "fold_DarEsSalaam",
+  "method": "CROMA",
+  "seed": 3,
+  "selection_metric": "val_iou",
+  "selection_value": 0.26427962,
+  "weights_present": false
+}

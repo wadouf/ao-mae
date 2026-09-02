@@ -1,0 +1,4 @@
+case,sample_id,city,t1,t2,cloud_burden,coverage,positive_coverage,croma_iou,oamae_iou,gain_oamae_vs_croma,selected_by
+median_gain,SCN_kig_0069,Kigali,2023-05-05,2023-05-25,0.810449,0.12283,0.371308,0.30434783,0.3373494,0.033001570000000036,deterministic severe-cloud rule computed from shared arrays
+p75_gain,SCN_dak_0067,Dakar,2023-07-05,2023-07-25,0.825844,0.189887,0.28866,0.30939227,0.34782609,0.03843381999999995,deterministic severe-cloud rule computed from shared arrays
+failure,SCN_kig_0066,Kigali,2023-02-05,2023-02-25,0.843,0.186849,0.462366,0.3373494,0.30107527,-0.036274130000000016,deterministic severe-cloud rule computed from shared arrays

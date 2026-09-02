@@ -1,0 +1,13 @@
+{
+  "bootstrap_draws": 50000,
+  "bootstrap_probability_positive_mean_delta": 1.0,
+  "bootstrap_type": "city_cluster_nonparametric",
+  "delta_iou_ci_high": 0.030111504483204866,
+  "delta_iou_ci_low": 0.024129927932905883,
+  "delta_iou_mean": 0.027175923517241563,
+  "fraction_positive_city_means": 1.0,
+  "fraction_positive_paired_seed_runs": 1.0,
+  "inference_unit": "city",
+  "n_cities": 6,
+  "n_paired_seed_runs": 60
+}

@@ -1,0 +1,6 @@
+window_days,target_availability,fallback_rate,median_target_age_days,stale_target_risk,n_anchor_token,n_anchors,anchors_no_past
+30,0.7619,0.2381,20.0,0.1562,672,42,2
+60,0.9524,0.0476,20.0,0.125,672,42,2
+90,0.9524,0.0476,20.0,0.125,672,42,2
+120,0.9524,0.0476,20.0,0.125,672,42,2
+unbounded,0.9524,0.0476,20.0,0.125,672,42,2

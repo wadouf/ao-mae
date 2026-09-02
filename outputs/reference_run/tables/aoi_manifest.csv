@@ -1,0 +1,7 @@
+city_id,name,area_km2,bounds,crs
+unknown,unknown,1297.008,"[9.52, 3.93, 9.88, 4.22]",EPSG:4326
+unknown,unknown,1296.733,"[11.39, 3.72, 11.68, 4.08]",EPSG:4326
+unknown,unknown,1092.577,"[13.28, 9.19, 13.58, 9.48]",EPSG:4326
+unknown,unknown,1437.669,"[-17.58, 14.57, -17.24, 14.9]",EPSG:4326
+unknown,unknown,1517.665,"[29.91, -2.12, 30.27, -1.78]",EPSG:4326
+unknown,unknown,3557.247,"[38.98, -7.15, 39.48, -6.58]",EPSG:4326

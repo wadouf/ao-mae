@@ -1,0 +1,8 @@
+{
+  "K": 50,
+  "config_hash": "cfg_SCN_a5d4a021",
+  "epochs_stage2": 60,
+  "global_seed": 20260727,
+  "lr_stage2": 0.001,
+  "method": "UNet_S2"
+}

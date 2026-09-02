@@ -1,0 +1,36 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          0.5511232833936811,
+          0.1564452621527016
+        ],
+        [
+          0.5774281560773962,
+          0.1564452621527016
+        ],
+        [
+          0.5774281560773962,
+          0.18275013483641667
+        ],
+        [
+          0.5511232833936811,
+          0.18275013483641667
+        ],
+        [
+          0.5511232833936811,
+          0.1564452621527016
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "id": "CHG_informal_small_roofs_0043",
+  "properties": {
+    "feature_type": "reference_change",
+    "stratum": "informal_small_roofs",
+    "tile_id": "AUD_informal_small_roofs_043"
+  },
+  "type": "Feature"
+}

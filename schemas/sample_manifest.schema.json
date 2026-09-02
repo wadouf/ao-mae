@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["sample_id", "city", "tile_id", "t1", "t2", "crs", "transform", "width", "height"],
+  "properties": {
+    "sample_id": {"type": "string", "minLength": 1},
+    "city": {"type": "string", "minLength": 1},
+    "tile_id": {"type": "string", "minLength": 1},
+    "t1": {"type": "string", "format": "date-time"},
+    "t2": {"type": "string", "format": "date-time"},
+    "crs": {"type": "string", "pattern": "^EPSG:[0-9]+$"},
+    "transform": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "number"}},
+    "width": {"type": "integer", "minimum": 1},
+    "height": {"type": "integer", "minimum": 1}
+  },
+  "additionalProperties": true
+}

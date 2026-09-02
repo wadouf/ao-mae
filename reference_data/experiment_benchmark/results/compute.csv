@@ -1,0 +1,3 @@
+device,gmacs_pair,latency_mean_ms_b1,latency_p95_ms_b1,method,model_size_mb,params_m,params_total_m,peak_vram_gb,precision,preproc_ms,repeats,size,smoke_only,status,warmup,measurement_scope
+cpu,45.21,801.96,802.54,oamae,129.4,30.79,32.3,,fp32,3.94,5,256,True,REFERENCE_IMPLEMENTATION_CPU_SMOKE_ONLY,2,mechanical_profiler_smoke_not_fair_cross_method_benchmark
+cpu,55.25,627.04,623.3,unet_s2,124.2,31.04,31.04,,fp32,3.78,5,256,True,REFERENCE_IMPLEMENTATION_CPU_SMOKE_ONLY,2,mechanical_profiler_smoke_not_fair_cross_method_benchmark

@@ -1,0 +1,5 @@
+stratum,sample_id,city,proposal_recall,proposal_precision,annotation_iou,reference_count,matched_count,false_proposal_count
+clear_regular,SCN_dak_0069,Dakar,0.8,0.8,0.5567010309278351,5,4,1
+heavy_cloud,SCN_dak_0058,Dakar,0.6666666666666666,0.5,0.5539568345323741,3,2,2
+texture_complex,SCN_kig_0065,Kigali,0.6666666666666666,0.5,0.5,3,2,2
+informal_small_roofs,SCN_dar_0064,DarEsSalaam,0.6666666666666666,0.5,0.5877192982456141,3,2,2

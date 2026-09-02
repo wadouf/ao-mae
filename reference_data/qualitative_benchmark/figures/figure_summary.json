@@ -1,0 +1,133 @@
+{
+  "figures": [
+    {
+      "qf_id": "QF1",
+      "title": "Severe-cloud comparative plate with urban scenes",
+      "sample_ids": [
+        "SCN_dar_0066",
+        "SCN_dar_0065",
+        "SCN_kig_0066"
+      ],
+      "selection_rule": "cloud>0.70 and coverage>0.02; median positive dIoU, 75th-percentile positive dIoU, minimum dIoU",
+      "files": [
+        "QF1_severe_cloud_comparison.pdf",
+        "QF1_severe_cloud_comparison.png"
+      ]
+    },
+    {
+      "qf_id": "QF2",
+      "title": "Observability and threshold diagnostics",
+      "sample_ids": [
+        "SCN_dou_0064",
+        "SCN_kig_0069"
+      ],
+      "selection_rule": "maximum excluded bright-surface proxy; maximum unresolved-positive mass; V12 recomputed at tau 0.75/0.85/0.95",
+      "files": [
+        "QF2_observability_abstention_diagnostics.pdf",
+        "QF2_observability_abstention_diagnostics.png"
+      ]
+    },
+    {
+      "qf_id": "QF3",
+      "title": "Past-only retrieval and fallback diagnostics",
+      "sample_ids": [
+        "SCN_yao_0065",
+        "SCN_dar_0058",
+        "SCN_gar_0069",
+        "SCN_dak_0058"
+      ],
+      "selection_rule": "one deterministic median-safety record for each valid-target state 3, 2, 1, and 0, with distinct samples",
+      "files": [
+        "QF3_past_only_retrieval_diagnostics.pdf",
+        "QF3_past_only_retrieval_diagnostics.png"
+      ]
+    },
+    {
+      "qf_id": "QF4",
+      "title": "SAR-optical fusion gate mechanism",
+      "sample_ids": [
+        "SCN_gar_0059",
+        "SCN_dak_0067",
+        "SCN_kig_0066"
+      ],
+      "selection_rule": "minimum cloud burden; maximum dIoU among cloud>0.75; minimum dIoU among cloud>0.75",
+      "files": [
+        "QF4_sar_optical_gate_mechanism.pdf",
+        "QF4_sar_optical_gate_mechanism.png"
+      ]
+    },
+    {
+      "qf_id": "QF5",
+      "title": "Proposal and annotation audit",
+      "sample_ids": [
+        "SCN_dak_0069",
+        "SCN_dak_0058",
+        "SCN_kig_0065",
+        "SCN_dar_0064"
+      ],
+      "selection_rule": "one deterministic scene for clear regular, heavy cloud, texture complex, and informal small-roof strata",
+      "files": [
+        "QF5_proposal_annotation_audit.pdf",
+        "QF5_proposal_annotation_audit.png",
+        "QF5_proposal_annotation_audit_metrics.csv"
+      ]
+    },
+    {
+      "qf_id": "QF6",
+      "title": "Failure taxonomy",
+      "sample_ids": [
+        "SCN_kig_0066",
+        "SCN_dar_0064",
+        "SCN_gar_0066",
+        "SCN_dak_0059",
+        "SCN_kig_0069",
+        "SCN_kig_0067"
+      ],
+      "selection_rule": "deterministic extrema for regression, small-object FN, V12-boundary FP, high-gate FP, unresolved-positive mass, and shared low-IoU",
+      "files": [
+        "QF6_failure_taxonomy.pdf",
+        "QF6_failure_taxonomy.png"
+      ]
+    },
+    {
+      "qf_id": "QF7",
+      "title": "Inter-city anti-cherry-picking contact sheet",
+      "sample_ids": [
+        "SCN_dou_0062",
+        "SCN_dou_0059",
+        "SCN_dou_0068",
+        "SCN_dou_0067",
+        "SCN_yao_0064",
+        "SCN_yao_0059",
+        "SCN_yao_0063",
+        "SCN_yao_0067",
+        "SCN_gar_0059",
+        "SCN_gar_0062",
+        "SCN_gar_0060",
+        "SCN_gar_0058",
+        "SCN_dak_0068",
+        "SCN_dak_0062",
+        "SCN_dak_0058",
+        "SCN_dak_0065",
+        "SCN_kig_0067",
+        "SCN_kig_0063",
+        "SCN_kig_0066",
+        "SCN_kig_0062",
+        "SCN_dar_0059",
+        "SCN_dar_0058",
+        "SCN_dar_0060",
+        "SCN_dar_0064"
+      ],
+      "selection_rule": "per city: minimum cloud, closest to median cloud, maximum cloud, minimum dIoU; unique samples",
+      "files": [
+        "QF7_intercity_contact_sheet.pdf",
+        "QF7_intercity_contact_sheet_page1.png",
+        "QF7_intercity_contact_sheet_page2.png"
+      ]
+    }
+  ],
+  "combined_pdf": "OA_MAE_ALL_QUALITATIVE_FIGURES.pdf",
+  "combined_pdf_sha256": "7bc015ca15e0c01e17d43d92c8ae5b0e1291904df42acac6b89bd8d9192d26f3",
+  "manifest": "figure_manifest.csv",
+  "created_at_utc": "2026-08-21T11:53:02Z"
+}

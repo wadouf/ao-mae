@@ -1,0 +1,11 @@
+{
+  "K": 10,
+  "artifact_type": "checkpoint_metadata_record",
+  "best_epoch": 46,
+  "fold": "fold_Kigali",
+  "method": "CROMA",
+  "seed": 8,
+  "selection_metric": "val_iou",
+  "selection_value": 0.27636101,
+  "weights_present": false
+}

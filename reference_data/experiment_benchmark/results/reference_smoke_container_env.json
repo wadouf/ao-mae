@@ -1,0 +1,20 @@
+{
+  "status": "MEASURED_CPU_SMOKE",
+  "smoke_only": true,
+  "torch": "2.13.0+cu130",
+  "cuda_available": false,
+  "gpu": "none",
+  "git_commit": "NOT_A_GIT_REPO_capture_manually",
+  "python": "3.11.15",
+  "protocol": {
+    "warmup": 2,
+    "repeats": 5,
+    "precision": "fp32",
+    "cuda_sync": true,
+    "batches": [
+      1,
+      16
+    ],
+    "size": 256
+  }
+}

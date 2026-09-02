@@ -1,0 +1,321 @@
+{
+  "optical_resolution_m": 10,
+  "internal_resolution_m": 1.6666666666666667,
+  "scene_extent_m": [
+    960,
+    960
+  ],
+  "city_profiles": {
+    "Douala": {
+      "soil": [
+        0.34,
+        0.31,
+        0.25
+      ],
+      "veg": 0.43,
+      "water": 0.14,
+      "terrain": 0.07,
+      "density": 0.8,
+      "regularity": 0.28,
+      "road_rgb": [
+        0.5,
+        0.48,
+        0.43
+      ],
+      "haze": 0.11,
+      "roof_palette": [
+        [
+          0.49,
+          0.44,
+          0.39
+        ],
+        [
+          0.34,
+          0.39,
+          0.43
+        ],
+        [
+          0.56,
+          0.31,
+          0.22
+        ],
+        [
+          0.28,
+          0.45,
+          0.52
+        ],
+        [
+          0.62,
+          0.58,
+          0.5
+        ]
+      ],
+      "coastal": true,
+      "river": true,
+      "wetland": true
+    },
+    "Yaounde": {
+      "soil": [
+        0.48,
+        0.3,
+        0.2
+      ],
+      "veg": 0.49,
+      "water": 0.03,
+      "terrain": 0.32,
+      "density": 0.74,
+      "regularity": 0.3,
+      "road_rgb": [
+        0.55,
+        0.43,
+        0.33
+      ],
+      "haze": 0.07,
+      "roof_palette": [
+        [
+          0.55,
+          0.25,
+          0.17
+        ],
+        [
+          0.43,
+          0.34,
+          0.29
+        ],
+        [
+          0.58,
+          0.53,
+          0.45
+        ],
+        [
+          0.31,
+          0.38,
+          0.43
+        ],
+        [
+          0.64,
+          0.36,
+          0.22
+        ]
+      ],
+      "coastal": false,
+      "river": false,
+      "wetland": false
+    },
+    "Garoua": {
+      "soil": [
+        0.57,
+        0.43,
+        0.3
+      ],
+      "veg": 0.19,
+      "water": 0.05,
+      "terrain": 0.1,
+      "density": 0.48,
+      "regularity": 0.44,
+      "road_rgb": [
+        0.66,
+        0.55,
+        0.42
+      ],
+      "haze": 0.08,
+      "roof_palette": [
+        [
+          0.64,
+          0.55,
+          0.44
+        ],
+        [
+          0.54,
+          0.31,
+          0.2
+        ],
+        [
+          0.43,
+          0.43,
+          0.4
+        ],
+        [
+          0.68,
+          0.64,
+          0.56
+        ],
+        [
+          0.4,
+          0.48,
+          0.49
+        ]
+      ],
+      "coastal": false,
+      "river": true,
+      "wetland": false
+    },
+    "Dakar": {
+      "soil": [
+        0.62,
+        0.56,
+        0.45
+      ],
+      "veg": 0.13,
+      "water": 0.12,
+      "terrain": 0.05,
+      "density": 0.86,
+      "regularity": 0.68,
+      "road_rgb": [
+        0.63,
+        0.62,
+        0.59
+      ],
+      "haze": 0.09,
+      "roof_palette": [
+        [
+          0.72,
+          0.7,
+          0.65
+        ],
+        [
+          0.56,
+          0.57,
+          0.58
+        ],
+        [
+          0.39,
+          0.49,
+          0.61
+        ],
+        [
+          0.64,
+          0.45,
+          0.3
+        ],
+        [
+          0.8,
+          0.76,
+          0.67
+        ]
+      ],
+      "coastal": true,
+      "river": false,
+      "wetland": false
+    },
+    "Kigali": {
+      "soil": [
+        0.49,
+        0.31,
+        0.21
+      ],
+      "veg": 0.42,
+      "water": 0.02,
+      "terrain": 0.38,
+      "density": 0.69,
+      "regularity": 0.48,
+      "road_rgb": [
+        0.57,
+        0.48,
+        0.4
+      ],
+      "haze": 0.06,
+      "roof_palette": [
+        [
+          0.61,
+          0.28,
+          0.19
+        ],
+        [
+          0.45,
+          0.47,
+          0.46
+        ],
+        [
+          0.58,
+          0.51,
+          0.42
+        ],
+        [
+          0.35,
+          0.4,
+          0.44
+        ],
+        [
+          0.7,
+          0.38,
+          0.22
+        ]
+      ],
+      "coastal": false,
+      "river": false,
+      "wetland": false
+    },
+    "DarEsSalaam": {
+      "soil": [
+        0.58,
+        0.49,
+        0.36
+      ],
+      "veg": 0.29,
+      "water": 0.12,
+      "terrain": 0.08,
+      "density": 0.78,
+      "regularity": 0.43,
+      "road_rgb": [
+        0.61,
+        0.56,
+        0.48
+      ],
+      "haze": 0.1,
+      "roof_palette": [
+        [
+          0.62,
+          0.58,
+          0.51
+        ],
+        [
+          0.39,
+          0.43,
+          0.46
+        ],
+        [
+          0.55,
+          0.31,
+          0.2
+        ],
+        [
+          0.35,
+          0.48,
+          0.58
+        ],
+        [
+          0.72,
+          0.67,
+          0.58
+        ]
+      ],
+      "coastal": true,
+      "river": false,
+      "wetland": false
+    }
+  },
+  "morphology_profiles": {
+    "regular": {
+      "density": 0.88,
+      "size": 1.25,
+      "irregular": 0.18,
+      "industrial": 0.18,
+      "grid": 0.78
+    },
+    "informal_small_roofs": {
+      "density": 1.32,
+      "size": 0.62,
+      "irregular": 0.88,
+      "industrial": 0.02,
+      "grid": 0.12
+    },
+    "texture_complex": {
+      "density": 1.02,
+      "size": 1.0,
+      "irregular": 0.58,
+      "industrial": 0.3,
+      "grid": 0.38
+    }
+  }
+}

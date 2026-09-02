@@ -1,0 +1,36 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          0.12935670317150652,
+          0.7298638801695779
+        ],
+        [
+          0.15108771814079955,
+          0.7298638801695779
+        ],
+        [
+          0.15108771814079955,
+          0.7515948951388709
+        ],
+        [
+          0.12935670317150652,
+          0.7515948951388709
+        ],
+        [
+          0.12935670317150652,
+          0.7298638801695779
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "id": "CHG_texture_complex_0090",
+  "properties": {
+    "feature_type": "reference_change",
+    "stratum": "texture_complex",
+    "tile_id": "AUD_texture_complex_030"
+  },
+  "type": "Feature"
+}

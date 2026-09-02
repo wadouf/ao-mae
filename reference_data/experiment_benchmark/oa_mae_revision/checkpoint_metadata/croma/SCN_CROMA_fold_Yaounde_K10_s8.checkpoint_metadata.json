@@ -1,0 +1,11 @@
+{
+  "K": 10,
+  "artifact_type": "checkpoint_metadata_record",
+  "best_epoch": 41,
+  "fold": "fold_Yaounde",
+  "method": "CROMA",
+  "seed": 8,
+  "selection_metric": "val_iou",
+  "selection_value": 0.23926577,
+  "weights_present": false
+}

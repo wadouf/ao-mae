@@ -1,0 +1,6 @@
+conditional_iou,conditional_precision,conditional_recall,coverage,end_to_end_recall_human_review,end_to_end_recall_no_followup,end_to_end_recall_reacquisition,end_to_end_recall_sar_fallback,median_delay_days,positive_coverage,review_burden_px,tau_hard,unresolved_positive_mass
+0.6832,0.7188,0.9324,0.5833,0.8388,0.3594,0.6974,0.7865,38,0.3854,10240,0.65,0.6146
+0.7025,0.7328,0.9444,0.6042,0.8571,0.4427,0.7349,0.7865,38,0.4688,9728,0.75,0.5312
+0.7163,0.7426,0.9528,0.625,0.8754,0.526,0.7724,0.8698,38,0.5521,9216,0.85,0.4479
+0.7163,0.7426,0.9528,0.625,0.8754,0.526,0.7724,0.8698,38,0.5521,9216,0.9,0.4479
+0.7405,0.7784,0.9384,0.7604,0.9004,0.7135,0.8453,0.849,38,0.7604,5888,0.95,0.2396

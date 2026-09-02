@@ -1,0 +1,11 @@
+variant,label,ablation,stage,tier,n_pairs,n_cities,iou_full_mean,iou_ablated_mean,delta_mean,delta_ci_low,delta_ci_high,sd_paired_runs,sd_city_means,mde_naive_n_runs,mde_cluster_n_cities,clustering_penalty,cities_positive,verdict,delta,n_cities_to_resolve,n_runs_to_resolve_naive
+gates_off_inference,"effective gate g, INFERENCE ONLY",g == 1 at inference on the unmodified full checkpoint,inference,2,60,6,0.316,0.275,0.041,0.0362,0.0452,0.0055,0.006,0.002,0.0069,3.44,6/6,RESOLVED-HELPS,,,
+big,,,?,,60,6,0.316,0.286,0.03,0.028,0.032,0.0185,0.0027,0.0067,0.0031,0.46,6/6,RESOLVED-HELPS,,,
+cityeffect,,,?,,60,6,0.316,0.296,0.02,0.0125,0.0265,0.0092,0.01,0.0033,0.0115,3.44,6/6,RESOLVED-HELPS,,,
+gates_off,effective gate g = g_cloud * r_sar,"g == 1, both gates disabled, retrained",pretrain,1,60,6,0.316,0.302,0.014,0.0098,0.0185,0.0055,0.006,0.002,0.0069,3.44,6/6,RESOLVED-HELPS,0.014,,
+g_cloud_off,cloud gate g_cloud,"g_cloud == 1, r_sar kept, retrained",pretrain,2,60,6,0.316,0.307,0.009,0.0045,0.0132,0.0055,0.006,0.002,0.0069,3.44,5/6,RESOLVED-HELPS,0.009,,
+omega_safe_off,SAR-drift safeguard omega_safe,omega_safe == 1,pretrain,1,60,6,0.316,0.308,0.008,0.013,0.0305,0.0277,0.0301,0.01,0.0344,3.44,3/6,UNRESOLVED,0.008,112,95
+r_sar_off,radar reliability gate r_sar,"r_sar == 1, g_cloud kept, retrained",pretrain,2,60,6,0.316,0.309,0.007,0.0028,0.0115,0.0055,0.006,0.002,0.0069,3.44,5/6,RESOLVED-HELPS,0.007,,
+small,,,?,,60,6,0.316,0.312,0.004,0.002,0.01,0.0555,0.008,0.02,0.0092,0.46,4/6,UNRESOLVED,,32,1507
+notapplied,,,?,,60,6,0.316,0.316,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0/6,NOT-APPLIED,,,
+hurts,,,?,,60,6,0.316,0.341,0.025,0.027,0.023,0.0185,0.0027,0.0067,0.0031,0.46,0/6,RESOLVED-HURTS,,,

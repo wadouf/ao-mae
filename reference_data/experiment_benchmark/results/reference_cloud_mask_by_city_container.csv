@@ -1,0 +1,4 @@
+city,coverage,positive_coverage,product
+douala,0.5,0.6667,CloudS2Mask
+douala,1.0,1.0,CloudSEN12
+douala,0.5,0.6667,S2_CLOUD_PROBABILITY

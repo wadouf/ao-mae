@@ -1,0 +1,77 @@
+{
+  "cities": [
+    {
+      "area_km2": 1297.008,
+      "bounds": [
+        9.52,
+        3.93,
+        9.88,
+        4.22
+      ],
+      "city_id": "unknown",
+      "crs": "EPSG:4326",
+      "name": "unknown"
+    },
+    {
+      "area_km2": 1296.733,
+      "bounds": [
+        11.39,
+        3.72,
+        11.68,
+        4.08
+      ],
+      "city_id": "unknown",
+      "crs": "EPSG:4326",
+      "name": "unknown"
+    },
+    {
+      "area_km2": 1092.577,
+      "bounds": [
+        13.28,
+        9.19,
+        13.58,
+        9.48
+      ],
+      "city_id": "unknown",
+      "crs": "EPSG:4326",
+      "name": "unknown"
+    },
+    {
+      "area_km2": 1437.669,
+      "bounds": [
+        -17.58,
+        14.57,
+        -17.24,
+        14.9
+      ],
+      "city_id": "unknown",
+      "crs": "EPSG:4326",
+      "name": "unknown"
+    },
+    {
+      "area_km2": 1517.665,
+      "bounds": [
+        29.91,
+        -2.12,
+        30.27,
+        -1.78
+      ],
+      "city_id": "unknown",
+      "crs": "EPSG:4326",
+      "name": "unknown"
+    },
+    {
+      "area_km2": 3557.247,
+      "bounds": [
+        38.98,
+        -7.15,
+        39.48,
+        -6.58
+      ],
+      "city_id": "unknown",
+      "crs": "EPSG:4326",
+      "name": "unknown"
+    }
+  ],
+  "mode": "reference"
+}

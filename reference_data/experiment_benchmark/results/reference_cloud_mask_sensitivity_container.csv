@@ -1,0 +1,4 @@
+class_gap,coverage,iou_croma,iou_oamae,negative_coverage,oamae_minus_croma_iou,positive_coverage,product,ranking
+0.1749,0.5,0.75,1.0,0.4918,0.25,0.6667,CloudS2Mask,oamae>croma
+0.0,1.0,0.8333,1.0,1.0,0.1667,1.0,CloudSEN12,oamae>croma
+0.1749,0.5,0.75,1.0,0.4918,0.25,0.6667,S2_CLOUD_PROBABILITY,oamae>croma

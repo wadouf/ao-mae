@@ -1,0 +1,54 @@
+common:
+  visible_language: English
+  ascii_hyphens_only: true
+  allow_watermarks: false
+  allow_visible_status_labels: false
+  allow_opaque_text_over_images: false
+  panel_letters_outside_axes: true
+  legends_in_reserved_margins: true
+  colorbars_in_separate_axes: true
+  probability_limits: [0.0, 1.0]
+  minimum_png_dpi: 300
+  vector_pdf: true
+  editable_svg: true
+
+dimensions_mm:
+  M1: [190, 90]
+  M2: [190, 86]
+  QF1: [190, 95]
+  QF2: [190, 88]
+  QF3: [190, 90]
+  QF4: [190, 86]
+  QF5: [190, 88]
+  QF6: [190, 90]
+  QF7: [190, 86]
+  Q0: [88, 65]
+
+qf1:
+  mean_cloud_minimum: 0.70
+  coverage_minimum: 0.05
+  selection: [median_positive_gain, upper_quartile_positive_gain, largest_regression]
+  methods: [UNet_S2, CROMA, OA_MAE]
+
+qf2:
+  thresholds: [0.75, 0.85, 0.95]
+  select_by: cloud_product_disagreement_and_bright_surface_fraction
+
+qf3:
+  states: [three_candidates, two_candidates, one_candidate, fallback]
+
+qf4:
+  states: [clear_condition, degraded_positive_gain, degraded_regression]
+  require_native_gates: true
+
+qf5:
+  strata: [regular_fabric, small_roof_dense_fabric, complex_texture, bright_surface]
+  require_annotation_gate: true
+
+qf6:
+  categories: [oamae_regression, small_object_false_negative, support_boundary_false_positive, high_gate_false_positive, unresolved_positive, both_methods_fail]
+
+qf7:
+  per_city_cases: [minimum_cloud, median_cloud, maximum_cloud, lowest_gain]
+  unique_samples: true
+  pages: 2

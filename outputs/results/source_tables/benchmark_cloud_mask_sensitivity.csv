@@ -1,0 +1,4 @@
+mask,positive_coverage,negative_coverage,class_gap,oamae_minus_croma_iou
+S2_CLOUD_PROBABILITY,0.57,0.6,0.030000000000000027,0.033
+CloudSEN12,0.61,0.63,0.020000000000000018,0.031
+CloudS2Mask,0.59,0.61,0.020000000000000018,0.034

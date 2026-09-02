@@ -1,0 +1,8 @@
+{
+  "scene_count": 72,
+  "city_count": 6,
+  "method_count": 4,
+  "prediction_rows": 288,
+  "array_bundle_count": 72,
+  "assembly": "24 deterministic chunks of 3 merged without numerical alteration"
+}

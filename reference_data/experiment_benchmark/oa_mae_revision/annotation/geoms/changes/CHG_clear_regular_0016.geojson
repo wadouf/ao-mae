@@ -1,0 +1,36 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          0.629448835873045,
+          0.53209521968849
+        ],
+        [
+          0.6422093744871672,
+          0.53209521968849
+        ],
+        [
+          0.6422093744871672,
+          0.5448557583026122
+        ],
+        [
+          0.629448835873045,
+          0.5448557583026122
+        ],
+        [
+          0.629448835873045,
+          0.53209521968849
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "id": "CHG_clear_regular_0016",
+  "properties": {
+    "feature_type": "reference_change",
+    "stratum": "clear_regular",
+    "tile_id": "AUD_clear_regular_016"
+  },
+  "type": "Feature"
+}

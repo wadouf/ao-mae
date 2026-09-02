@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-08-21T12:18:02Z",
+  "scope": "all package files outside the manifests directory except this record",
+  "files_scanned": 4834,
+  "text_files_checked": 3065,
+  "array_archives_checked": 1743,
+  "pdf_files_checked": 14,
+  "png_files_checked": 12,
+  "filtered_term_hits": 0,
+  "legacy_identifier_hits": 0,
+  "schema_suffix_hits": 0,
+  "non_ascii_dash_hits": 0,
+  "instruction_artifact_hits": 0
+}

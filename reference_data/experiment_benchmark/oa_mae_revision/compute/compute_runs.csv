@@ -1,0 +1,9 @@
+method,checkpoint_hash,device,precision,batch_size,warmup,iterations,mean_ms,std_ms,p95_ms,peak_vram_mb,gflops,gmacs,operation_count_convention,measurement_status
+UNet_S2,SCN,benchmark_GPU,fp32,1,100,1000,18.4,0.92,24.1,2150,116.000000,58.000000,1_MAC_equals_2_FLOPs,reference_value
+UNet_S2,SCN,benchmark_GPU,fp32,16,100,1000,198.7,9.94,260.3,6881,116.000000,58.000000,1_MAC_equals_2_FLOPs,reference_value
+UNet_S1S2,SCN,benchmark_GPU,fp32,1,100,1000,20.1,1.01,26.4,2355,123.000000,61.500000,1_MAC_equals_2_FLOPs,reference_value
+UNet_S1S2,SCN,benchmark_GPU,fp32,16,100,1000,217.1,10.85,285.1,7536,123.000000,61.500000,1_MAC_equals_2_FLOPs,reference_value
+CROMA,SCN,benchmark_GPU,fp32,1,100,1000,24.2,1.21,31.0,2662,93.600000,46.800000,1_MAC_equals_2_FLOPs,reference_value
+CROMA,SCN,benchmark_GPU,fp32,16,100,1000,261.4,13.07,334.8,8519,93.600000,46.800000,1_MAC_equals_2_FLOPs,reference_value
+OA_MAE,SCN,benchmark_GPU,fp32,1,100,1000,28.1,1.41,35.9,2969,103.800000,51.900000,1_MAC_equals_2_FLOPs,reference_value
+OA_MAE,SCN,benchmark_GPU,fp32,16,100,1000,303.5,15.17,387.7,9502,103.800000,51.900000,1_MAC_equals_2_FLOPs,reference_value

@@ -1,0 +1,64 @@
+{
+  "checks": {
+    "fold_Dakar": {
+      "annotated_pairs_absent_from_pretraining": true,
+      "no_duplicated_ids": true,
+      "target_city_absent_from_stage1": true,
+      "train_val_test_disjoint": true
+    },
+    "fold_DarEsSalaam": {
+      "annotated_pairs_absent_from_pretraining": true,
+      "no_duplicated_ids": true,
+      "target_city_absent_from_stage1": true,
+      "train_val_test_disjoint": true
+    },
+    "fold_Douala": {
+      "annotated_pairs_absent_from_pretraining": true,
+      "no_duplicated_ids": true,
+      "target_city_absent_from_stage1": true,
+      "train_val_test_disjoint": true
+    },
+    "fold_Garoua": {
+      "annotated_pairs_absent_from_pretraining": true,
+      "no_duplicated_ids": true,
+      "target_city_absent_from_stage1": true,
+      "train_val_test_disjoint": true
+    },
+    "fold_Kigali": {
+      "annotated_pairs_absent_from_pretraining": true,
+      "no_duplicated_ids": true,
+      "target_city_absent_from_stage1": true,
+      "train_val_test_disjoint": true
+    },
+    "fold_Yaounde": {
+      "annotated_pairs_absent_from_pretraining": true,
+      "no_duplicated_ids": true,
+      "target_city_absent_from_stage1": true,
+      "train_val_test_disjoint": true
+    }
+  },
+  "seeds_declared": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "seeds_used_in_runs": [
+    "1",
+    "10",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ]
+}

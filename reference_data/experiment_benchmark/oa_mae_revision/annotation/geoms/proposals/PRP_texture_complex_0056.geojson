@@ -1,0 +1,37 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          0.3679226592746563,
+          0.6623334063482471
+        ],
+        [
+          0.3915032982404809,
+          0.6623334063482471
+        ],
+        [
+          0.3915032982404809,
+          0.6859140453140717
+        ],
+        [
+          0.3679226592746563,
+          0.6859140453140717
+        ],
+        [
+          0.3679226592746563,
+          0.6623334063482471
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "id": "PRP_texture_complex_0056",
+  "properties": {
+    "feature_type": "proposal",
+    "matched_change_id": "CHG_texture_complex_0071",
+    "stratum": "texture_complex",
+    "tile_id": "AUD_texture_complex_011"
+  },
+  "type": "Feature"
+}

@@ -1,0 +1,20 @@
+{
+  "full_run_grid_covered": false,
+  "full_run_grid_rows": 720,
+  "method_specific_assets": [
+    "probability",
+    "binary",
+    "OA_MAE gates only"
+  ],
+  "prohibition": "and not a substitute for per-run predictions",
+  "purpose": "qualitative benchmark and path/schema/evaluation-contract dataset scope",
+  "referenced_runs": 24,
+  "rows": 288,
+  "scope": "K=25, seed=1, all 72 target-city test samples, four methods",
+  "shared_assets": [
+    "ground_truth",
+    "v12",
+    "cloud_t1",
+    "cloud_t2"
+  ]
+}

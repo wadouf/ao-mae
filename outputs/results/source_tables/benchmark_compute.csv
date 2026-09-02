@@ -1,0 +1,5 @@
+method,params_m,gflops_pair,latency_mean_ms,latency_p95_ms,peak_vram_gb,throughput_pairs_s,model_size_mb,offline_pretraining_gpu_hours,area_km2_per_hour,gmacs_pair,operation_count_convention,tile_pixels,resolution_m,tile_area_km2,throughput_scope
+UNet_S2,31.0,116.000000,18.4,24.1,2.1,54.3,124,0.0,1281097.728000,58.000000,1_MAC_equals_2_FLOPs,256,10,6.553600,compute_only_excludes_io_preprocessing_overlap_and_cloud_mask
+UNet_S1S2,31.4,123.000000,20.1,26.4,2.3,49.8,126,0.0,1174929.408000,61.500000,1_MAC_equals_2_FLOPs,256,10,6.553600,compute_only_excludes_io_preprocessing_overlap_and_cloud_mask
+CROMA,29.3,93.600000,24.2,31.0,2.6,41.3,117,72.0,974389.248000,46.800000,1_MAC_equals_2_FLOPs,256,10,6.553600,compute_only_excludes_io_preprocessing_overlap_and_cloud_mask
+OA_MAE,29.8,103.800000,28.1,35.9,2.9,35.6,119,96.0,839909.376000,51.900000,1_MAC_equals_2_FLOPs,256,10,6.553600,compute_only_excludes_io_preprocessing_overlap_and_cloud_mask

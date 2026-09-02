@@ -1,0 +1,16 @@
+# hardware.txt - PRE-REMPLI depuis environnement_propose.md (cible 4x RTX 4090)
+# STATUT: CONFIRMED_BY_MEASUREMENT: no -> ces valeurs ORIENTENT, elles ne
+# prouvent rien. Sur la machine reellement louee, une seule commande remplace
+# tout par les valeurs mesurees et passe le statut a yes :
+# python compute/collect_environment.py -write
+# (ou verifiez champ par champ avec la commande en commentaire)
+CONFIRMED_BY_MEASUREMENT: no
+MEASUREMENT_DATE:
+GPU_EXACT: NVIDIA GeForce RTX 4090 # nvidia-smi -query-gpu=name -format=csv,noheader
+GPU_COUNT: 4 # nvidia-smi -L | wc -l ; si 4 instances mono-GPU separees, noter "4x1"
+VRAM: 24 GB par GPU # nvidia-smi -query-gpu=memory.total -format=csv,noheader
+CPU: >= 8 vCPU par instance (EPYC/Xeon) # lscpu | grep "Model name"
+RAM: >= 32 GB par instance # free -h | awk '/Mem:/{print $2}'
+OS: Ubuntu 22.04 LTS # lsb_release -d
+STORAGE: 1 TB NVMe # df -h . | tail -1
+POWER_MONITORING_AVAILABLE: oui (nvidia-smi -query-gpu=power.draw)

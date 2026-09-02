@@ -1,0 +1,37 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          0.257840624417644,
+          0.6410415336657316
+        ],
+        [
+          0.29295556853315796,
+          0.6410415336657316
+        ],
+        [
+          0.29295556853315796,
+          0.6761564777812455
+        ],
+        [
+          0.257840624417644,
+          0.6761564777812455
+        ],
+        [
+          0.257840624417644,
+          0.6410415336657316
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "id": "PRP_clear_regular_0005",
+  "properties": {
+    "feature_type": "proposal",
+    "matched_change_id": "CHG_clear_regular_0007",
+    "stratum": "clear_regular",
+    "tile_id": "AUD_clear_regular_007"
+  },
+  "type": "Feature"
+}

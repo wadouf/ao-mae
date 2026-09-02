@@ -1,0 +1,12 @@
+{
+  "type": "FeatureCollection",
+  "name": "city_fallback_areas",
+  "features": [
+    {"type":"Feature","properties":{"city":"Douala","country":"Cameroon","code":"dou"},"geometry":{"type":"Polygon","coordinates":[[[9.52,3.93],[9.88,3.93],[9.88,4.22],[9.52,4.22],[9.52,3.93]]]}},
+    {"type":"Feature","properties":{"city":"Yaounde","country":"Cameroon","code":"yao"},"geometry":{"type":"Polygon","coordinates":[[[11.39,3.72],[11.68,3.72],[11.68,4.08],[11.39,4.08],[11.39,3.72]]]}},
+    {"type":"Feature","properties":{"city":"Garoua","country":"Cameroon","code":"gar"},"geometry":{"type":"Polygon","coordinates":[[[13.28,9.19],[13.58,9.19],[13.58,9.48],[13.28,9.48],[13.28,9.19]]]}},
+    {"type":"Feature","properties":{"city":"Dakar","country":"Senegal","code":"dak"},"geometry":{"type":"Polygon","coordinates":[[[-17.58,14.57],[-17.24,14.57],[-17.24,14.90],[-17.58,14.90],[-17.58,14.57]]]}},
+    {"type":"Feature","properties":{"city":"Kigali","country":"Rwanda","code":"kig"},"geometry":{"type":"Polygon","coordinates":[[[29.91,-2.12],[30.27,-2.12],[30.27,-1.78],[29.91,-1.78],[29.91,-2.12]]]}},
+    {"type":"Feature","properties":{"city":"DarEsSalaam","display_name":"Dar es Salaam","country":"Tanzania","code":"dar"},"geometry":{"type":"Polygon","coordinates":[[[38.98,-7.15],[39.48,-7.15],[39.48,-6.58],[38.98,-6.58],[38.98,-7.15]]]}}
+  ]
+}

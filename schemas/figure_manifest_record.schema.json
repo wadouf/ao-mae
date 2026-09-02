@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OA-MAE figure manifest record",
+  "type": "object",
+  "required": [
+    "figure_id",
+    "output_pdf",
+    "output_svg",
+    "output_png",
+    "width_mm",
+    "height_mm",
+    "dpi",
+    "selection_rule",
+    "panel_sources",
+    "sha256"
+  ],
+  "properties": {
+    "figure_id": {
+      "type": "string"
+    },
+    "output_pdf": {
+      "type": "string"
+    },
+    "output_svg": {
+      "type": "string"
+    },
+    "output_png": {
+      "type": "string"
+    },
+    "width_mm": {
+      "type": "number"
+    },
+    "height_mm": {
+      "type": "number"
+    },
+    "dpi": {
+      "type": "integer",
+      "minimum": 300
+    },
+    "selection_rule": {
+      "type": "string"
+    },
+    "panel_sources": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "sha256": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

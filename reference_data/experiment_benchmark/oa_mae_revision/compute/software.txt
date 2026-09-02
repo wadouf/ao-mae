@@ -1,0 +1,12 @@
+# software.txt - PRE-REMPLI depuis environnement_propose.md
+# STATUT: CONFIRMED_BY_MEASUREMENT: no -> valeurs d'orientation. Sur la
+# machine reelle : python compute/collect_environment.py -write
+CONFIRMED_BY_MEASUREMENT: no
+MEASUREMENT_DATE:
+PYTHON: 3.11.x # python3 -version
+PYTORCH: >= 2.1, roue cu12x # python3 -c "import torch; print(torch._version_)"
+CUDA: 12.x # python3 -c "import torch; print(torch.version.cuda)"
+CUDNN: livre avec la roue PyTorch # python3 -c "import torch; print(torch.backends.cudnn.version())"
+DRIVERS: >= 535 # nvidia-smi | head -3
+PRECISION_MODE: bf16 autocast (Stage I et II) ; benchmark §6.6 a part, precision declaree
+PROFILING_LIBRARIES: torch.profiler ; nvidia-smi dmon

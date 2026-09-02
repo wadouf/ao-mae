@@ -1,0 +1,11 @@
+figure_id,title,width_mm,height_mm,min_width_px_300dpi,min_height_px_300dpi,destination
+M1,Stage I architecture,190,90,2245,1063,main
+M2,Stage II architecture,190,86,2245,1016,main
+QF1,Severe-cloud comparison,190,95,2245,1122,main
+QF2,Observability diagnostics,190,88,2245,1039,supplement
+QF3,Past-only retrieval,190,90,2245,1063,supplement
+QF4,Gate mechanism,190,86,2245,1016,main_or_supplement
+QF5,Proposal and annotation audit,190,88,2245,1039,supplement
+QF6,Failure taxonomy,190,90,2245,1063,supplement
+QF7,Inter-city contact sheet,190,86,2245,1016,supplement_two_pages
+Q0,Quantitative plot,88,65,1039,768,main_or_supplement

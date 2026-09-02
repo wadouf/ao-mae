@@ -1,0 +1,11 @@
+{
+  "K": 25,
+  "artifact_type": "checkpoint_metadata_record",
+  "best_epoch": 45,
+  "fold": "fold_Douala",
+  "method": "OA_MAE",
+  "seed": 7,
+  "selection_metric": "val_iou",
+  "selection_value": 0.29589481,
+  "weights_present": false
+}

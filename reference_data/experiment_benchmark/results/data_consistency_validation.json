@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "passes": [
+    "integrity verified in 20 CSV and 1671 NPZ files",
+    "sample IDs, geospatial metadata and acquisition dates are coherent",
+    "LOCO lists, full fingerprints and actual matched few-shot selections verified",
+    "checkpoint metadatas are unambiguous and 720 run logs reproduce selection metadata",
+    "shared ground truth/cloud/V12, threshold consistency, method gates and 288 pixel metrics verified",
+    "all retrieval targets are unique, past-only, age-consistent and within 90 days",
+    "annotation audit reconstructs from 701 changes, 619 proposals and valid GeoJSON",
+    "three severe-cloud cases, one genuine failure, metrics and figure hashes verified",
+    "whole-lot SHA-256 manifest verified for 4732 files"
+  ],
+  "errors": [],
+  "certification_scope": "internal data consistency"
+}
