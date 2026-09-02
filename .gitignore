@@ -43,3 +43,6 @@ docs/GITHUB_REPRODUCIBILITY.md
 # Placeholder checkpoint bundles (8x8 matrix + 8-vector, 72 values each).
 # Not trained weights. Remove this line once the real checkpoints are in place.
 reference_complements/checkpoints/
+
+# Manuscript, distributed through the journal rather than the repository
+main.pdf
