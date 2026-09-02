@@ -7,6 +7,8 @@ The method treats missing optical evidence as a first-class constraint rather th
 - Paper: *OA-MAE: Observability-Aligned Multimodal Self-Supervised Learning for Reliable Urban Change Detection under Partial Observability*, Wadoufey et al., EAI Endorsed Transactions.
 - Formal specification of every equation: [`SCIENTIFIC_CONTRACT.md`](SCIENTIFIC_CONTRACT.md).
 
+![OA-MAE pipeline](docs/figures/pipeline.svg)
+
 ---
 
 ## Contents
@@ -30,18 +32,19 @@ The method treats missing optical evidence as a first-class constraint rather th
 
 ```text
 .
-├── config/                  # project configuration, AOIs, figure contract, model adapters
-├── src/oamae/               # the OA-MAE model: encoders, gates, Cloud-Mix, targets, decoder
-├── src/oamae_pipeline/      # pipeline library: AOI, discovery, raster, retrieval, metrics, figures
-├── scripts/                 # stage scripts 00 to 15, training 20 to 22, and the driver
-├── schemas/                 # JSON schemas for every record type
-├── templates/               # manifest and annotation table templates
-├── tests/                   # model, contract and figure-policy tests
-├── reference_data/          # experiment data: benchmark records, scenes, predictions, figures
-├── reference_complements/   # derived deterministic fields, annotations, checkpoint metadata
-├── manuscript/              # frozen source tables and the scripts that derive manuscript values
-├── outputs/                 # figures, tables, logs, checkpoints, release artifacts
-└── package_manifests/       # manifests and SHA-256 checksums
+|-- config/                  # project configuration, AOIs, figure contract, model adapters
+|-- src/oamae/               # the OA-MAE model: encoders, gates, Cloud-Mix, targets, decoder
+|-- src/oamae_pipeline/      # pipeline library: AOI, discovery, raster, retrieval, metrics, figures
+|-- scripts/                 # stage scripts 00 to 15, training and verification 20 to 24
+|-- docs/figures/            # architecture and pipeline figures
+|-- schemas/                 # JSON schemas for every record type
+|-- templates/               # manifest and annotation table templates
+|-- tests/                   # model, contract and figure-policy tests
+|-- reference_data/          # experiment data: benchmark records, scenes, predictions, figures
+|-- reference_complements/   # derived deterministic fields, annotations, checkpoint metadata
+|-- manuscript/              # frozen source tables and the scripts that derive manuscript values
+|-- outputs/                 # figures, tables, logs, checkpoints, release artifacts
+`-- package_manifests/       # manifests and SHA-256 checksums
 ```
 
 ## Installation
@@ -73,7 +76,7 @@ Read this before planning a reproduction run.
 
 **Included.** The archived experiment outputs: 660 tile records over six cities (480 in the source pool, 180 held out, 110 per city), leave-one-city-out folds, few-shot registries for K = 10, 25 and 50, run records, metrics, prediction arrays, annotation audit assets, the QF1 to QF7 figures, and the frozen tables from which every manuscript value is derived.
 
-**Not included.** Trained weights, and the training tensors themselves. The arrays under `reference_data/` are display and quality-control tensors — 96 by 96, three-band RGB composites, single-channel SAR — whereas the model consumes 256 by 256 tiles with ten Sentinel-2 bands and two Sentinel-1 polarizations. Reproducing the training therefore requires re-acquiring the Sentinel products through stages 01 to 05, which needs Earth Engine or Copernicus credentials.
+**Not included.** Trained weights, and the training tensors themselves. The arrays under `reference_data/` are display and quality-control tensors: 96 by 96, three-band RGB composites, single-channel SAR, whereas the model consumes 256 by 256 tiles with ten Sentinel-2 bands and two Sentinel-1 polarizations. Reproducing the training therefore requires re-acquiring the Sentinel products through stages 01 to 05, which needs Earth Engine or Copernicus credentials.
 
 What you can do without any credentials: install the package, run the tests, inspect and re-derive every manuscript value, read the figure and evaluation contracts, and run the model on your own data once it satisfies the contract below.
 
@@ -81,7 +84,7 @@ What you can do without any credentials: install the package, run the tests, ins
 
 Stage scripts exchange `.npz` bundles named `SCN_<city>_<index>.npz`. The city code is the second field of the name and drives the leave-one-city-out logic.
 
-**Stage II bundle** — `data/processed/scene_bundles/`:
+**Stage II bundle**, in `data/processed/scene_bundles/`:
 
 | Key | Shape | Meaning |
 | --- | --- | --- |
@@ -90,7 +93,7 @@ Stage scripts exchange `.npz` bundles named `SCN_<city>_<index>.npz`. The city c
 | `cloud_t1`, `cloud_t2` | `(256, 256)` float32 | cloud probability in [0, 1] |
 | `reference` | `(256, 256)` uint8 | adjudicated change mask, training and evaluation only |
 
-**Stage I bundle** — `data/processed/pretrain_bundles/`:
+**Stage I bundle**, in `data/processed/pretrain_bundles/`:
 
 | Key | Shape | Meaning |
 | --- | --- | --- |
@@ -104,7 +107,7 @@ Stage scripts exchange `.npz` bundles named `SCN_<city>_<index>.npz`. The city c
 
 ## End-to-end reproduction
 
-### Step 0 — freeze the environment
+### Step 0. freeze the environment
 
 ```bash
 python scripts/00_preflight.py
@@ -114,7 +117,7 @@ git rev-parse HEAD > outputs/logs/commit.txt
 
 The commit hash, the configuration hash, the split hash and the normalization hash are all recorded inside every checkpoint. A result that cannot name these four values is not reproducible.
 
-### Step 1 — areas, acquisitions and pairing
+### Step 1. areas, acquisitions and pairing
 
 ```bash
 python scripts/01_resolve_areas.py         --config config/project.yaml --mode observed
@@ -124,33 +127,33 @@ python scripts/03_build_pair_candidates.py --config config/project.yaml --mode o
 
 Tiles are 256 by 256 at 10 m in the local UTM zone. For each optical date the nearest compatible Sentinel-1 acquisition within six days is selected, with the orbit-direction and relative-orbit policy declared in `config/project.yaml`. Product identifiers, sensing times, MGRS tiles, CRS, affine transform, processing baseline and checksums are retained in the sample manifest.
 
-### Step 2 — rasters and the external support
+### Step 2. rasters and the external support
 
 ```bash
 python scripts/04_export_rasters.py  --config config/project.yaml --mode observed
 python scripts/05_compute_support.py --config config/project.yaml --mode observed
 ```
 
-Stage 05 computes the support of equations 1 to 3: token-level cloud probability by 16 by 16 average pooling, a deterministic refinement that increases conservatism near likely cloud, a per-date visibility mask at the hard threshold 0.85, and their intersection `V12`. This support is external and method-invariant — every compared method is scored on the same pixels.
+Stage 05 computes the support of equations 1 to 3: token-level cloud probability by 16 by 16 average pooling, a deterministic refinement that increases conservatism near likely cloud, a per-date visibility mask at the hard threshold 0.85, and their intersection `V12`. This support is external and method-invariant, so every compared method is scored on the same pixels.
 
-### Step 3 — labels
+### Step 3. labels
 
 ```bash
 python scripts/06_prepare_annotations.py  --config config/project.yaml --mode observed
 python scripts/07_validate_annotations.py --config config/project.yaml --mode observed
 ```
 
-Open Buildings temporal products propose candidate regions; two annotators independently accept, correct, split, merge or reject them, followed by adjudication. The pipeline prepares and validates these files but does not produce annotation decisions. Because the frame is proposal-driven, a real change never proposed cannot reach verification — hence the independent proposal audit reported alongside the benchmark.
+Open Buildings temporal products propose candidate regions; two annotators independently accept, correct, split, merge or reject them, followed by adjudication. The pipeline prepares and validates these files but does not produce annotation decisions. Because the frame is proposal-driven, a real change never proposed cannot reach verification, hence the independent proposal audit reported alongside the benchmark.
 
-### Step 4 — splits
+### Step 4. splits
 
 ```bash
 python scripts/08_build_splits.py --config config/project.yaml --mode observed
 ```
 
-Six leave-one-city-out folds. In each fold the target city is excluded from Stage I pretraining and from Stage II supervision, and is used only for testing. Few-shot budgets are K ∈ {10, 25, 50} labeled tile pairs per source city, with ten matched seeds.
+Six leave-one-city-out folds. In each fold the target city is excluded from Stage I pretraining and from Stage II supervision, and is used only for testing. Few-shot budgets are K in {10, 25, 50} labeled tile pairs per source city, with ten matched seeds.
 
-### Step 5 — Stage I pretraining
+### Step 5. Stage I pretraining
 
 ```bash
 python scripts/20_pretrain_stage1.py \
@@ -165,7 +168,7 @@ Per-band normalization statistics are computed once over the training pool and w
 
 Run once per fold, so six times. The paper reports 96 GPU-hours of offline pretraining for OA-MAE.
 
-### Step 6 — Stage II few-shot training
+### Step 6. Stage II few-shot training
 
 ```bash
 python scripts/21_train_stage2.py \
@@ -178,7 +181,7 @@ python scripts/21_train_stage2.py \
 
 The Stage-I encoders are frozen in the primary setting, which is what isolates representation quality under scarce labels; `--unfreeze-encoders` departs from it and must be reported as such. Supervision is focal plus Dice evaluated only on `V12`, so unobservable pixels never contribute a gradient. The best epoch is selected by validation F1 on source-city tiles held out of the few-shot sample, never on the target city.
 
-The full grid is 6 cities × 3 budgets × 10 seeds = 180 runs:
+The full grid is 6 cities x 3 budgets x 10 seeds = 180 runs:
 
 ```bash
 for city in dak dar dou gar kig yao; do
@@ -194,7 +197,7 @@ done
 
 Checkpoints are written as `oa_mae_loco_{city}_K{k}_seed{NN}.npz`, the name stages 09 and 10 expect.
 
-### Step 7 — inference
+### Step 7. inference
 
 ```bash
 export OA_MAE_REPOSITORY=$PWD/src
@@ -205,7 +208,7 @@ python scripts/10_run_inference.py --config config/project.yaml --mode observed 
 
 Stage 09 resolves every method declared in `config/model_adapters.yaml`, verifies that its repository and checkpoint root exist, and records the SHA-256 of each checkpoint. A method that cannot be resolved produces `outputs/observed_run/BLOCKED.json` naming exactly what is missing, and the stage exits non-zero rather than substituting anything. Stage 10 runs inference through the adapter interface and records, for each prediction, the checkpoint used and its checksum.
 
-### Step 8 — metrics
+### Step 8. metrics
 
 ```bash
 python scripts/11_compute_metrics.py --config config/project.yaml --mode observed
@@ -213,7 +216,15 @@ python scripts/11_compute_metrics.py --config config/project.yaml --mode observe
 
 IoU, F1, AUPRC, precision and recall are computed on `V12`, together with coverage, positive coverage and unresolved-positive mass. Every metric is recomputed from the archived arrays; none is transcribed.
 
-### Step 9 — case selection and figures
+### Step 9. aggregation
+
+```bash
+python scripts/23_aggregate_benchmark.py --config config/project.yaml --mode observed
+```
+
+Per-sample metrics are aggregated to one row per city, budget, seed and method in `benchmark_main_runs.csv`, then to `benchmark_main_summary.csv` with confidence intervals from a nonparametric bootstrap that resamples cities, the primary statistical unit. `benchmark_primary_comparison.json` carries the paired city-macro difference between OA-MAE and CROMA. These are the tables the manuscript values are built from, and every row remains attached to the per-sample records it came from.
+
+### Step 10. case selection and figures
 
 ```bash
 python scripts/12_select_cases.py   --config config/project.yaml --mode observed
@@ -223,7 +234,7 @@ python scripts/validate_figure_dimensions.py
 
 Case selection is deterministic and frozen before visual inspection, so the qualitative panels cannot be chosen after seeing them. The selection rule retains a median positive gain, an upper-quartile gain, and the largest regression, so failure cases appear by construction.
 
-### Step 10 — compute benchmark
+### Step 11. compute benchmark
 
 ```bash
 python scripts/22_benchmark_compute.py --config config/project.yaml \
@@ -232,7 +243,7 @@ python scripts/22_benchmark_compute.py --config config/project.yaml \
 
 Reports parameters, operation counts under the convention that one MAC equals two FLOPs, mean and p95 latency, peak VRAM, throughput and model size, with the environment recorded in `outputs/logs/compute_environment.json`. Offline pretraining and online inference are reported separately, and the measurement excludes I/O, preprocessing and cloud masking.
 
-### Step 11 — release
+### Step 12. release
 
 ```bash
 python scripts/14_validate_release.py --config config/project.yaml --mode observed
@@ -240,6 +251,24 @@ python scripts/15_freeze_release.py   --config config/project.yaml --mode observ
 ```
 
 Validation must report `PASS` before any claim rests on the run. Freezing writes the package manifest and checksums.
+
+### Step 13. traceability
+
+```bash
+python scripts/24_verify_traceability.py --config config/project.yaml --mode observed
+```
+
+The last step recomputes the chain link by link and writes `outputs/observed_run/TRACEABILITY.json`:
+
+| Check | What it recomputes |
+| --- | --- |
+| `thresholding` | every binary map equals its probability map at the declared threshold |
+| `support_identity` | every stored `V12` equals the support recomputed from the cloud arrays by equations 1 to 3 |
+| `metric_identity` | every per-sample metric row recomputes from the archived arrays |
+| `aggregation_identity` | the benchmark summary is the aggregate of the run table |
+| `manuscript_values` | `build_values.py` regenerates the value files from the source tables |
+
+Each check reports how many records it examined, so a partial run is never mistaken for a complete one, and the script exits non-zero unless every check passes on a non-empty set.
 
 `python scripts/run_pipeline.py --config config/project.yaml --mode observed` chains stages 01 to 15; the training scripts 20 to 22 are run separately because they are long and fold-specific.
 
@@ -261,9 +290,17 @@ The implementation is in [`src/oamae/`](src/oamae) and follows the specification
 | `data.py` | bundle datasets, contract validation and frozen normalization |
 | `inference.py` | the `predict_batch` adapter entry point |
 
+![Stage I, observability-aligned masked pretraining](docs/figures/stage1_architecture.png)
+
+Stage I combines the modality-specific encoders, the deterministic cloud refinement, the cloud-conditioned cross-attention, the learned SAR reliability gate, Cloud-Mix masking and past-only target construction. Only the pretrained encoders transfer to Stage II.
+
+![Stage II, few-shot dense change detection with explicit deferral](docs/figures/stage2_architecture.png)
+
+Stage II reuses those encoders on both dates, maps them to dense features through the pyramid adapters, and feeds the bi-temporal operator into the residual decoder. The support is computed independently of model confidence, and pixels outside it remain unresolved.
+
 The optical stream is a ViT-S/16 encoder, 12 blocks, width 384, 6 heads. The SAR stream is a ViT-Tiny encoder, 12 blocks, width 192, 3 heads, linearly projected to the optical width and injected into the final four optical blocks through cross-attention with optical queries and SAR keys and values, scaled token by token by the effective gate.
 
-**Measured against the paper.** The Stage-II model holds 30.712 M parameters and a 122.8 MB state dict, against 29.8 M and 119 MB in Table 6. The operation count measured by `scripts/22_benchmark_compute.py` is 62.5 GFLOPs per bi-temporal pair, against 103.8 in Table 6; that counter covers convolution, linear and attention matmuls and excludes elementwise operations and normalizations. These gaps come from submodule widths the paper does not fix — the MLP ratio, the cross-attention width, and the adapter and decoder widths — which are exposed in `OAMAEConfig` rather than tuned to match the published figures.
+**Measured against the paper.** The Stage-II model holds 30.712 M parameters and a 122.8 MB state dict, against 29.8 M and 119 MB in Table 6. The operation count measured by `scripts/22_benchmark_compute.py` is 62.5 GFLOPs per bi-temporal pair, against 103.8 in Table 6; that counter covers convolution, linear and attention matmuls and excludes elementwise operations and normalizations. These gaps come from submodule widths the paper does not fix, namely the MLP ratio, the cross-attention width, and the adapter and decoder widths, all of which are exposed in `OAMAEConfig` rather than tuned to match the published figures.
 
 **Choices the paper does not fix**, all flagged in `config.py`: MLP ratio 4; the Cloud-Mix split across cloud, structural and random tokens, 50/25/25 by default; the gradient term weight in the reconstruction loss; the formulation of the structural fallback, implemented as gradient-structure agreement with the current radar observation; and the descriptors feeding the SAR reliability gate, implemented as token-mean gradient magnitude and within-token coefficient of variation. Changing any of them changes the model and must be reported.
 
@@ -298,7 +335,7 @@ The model emits three states, not two:
 
 | State | Condition |
 | --- | --- |
-| Change | inside `V12`, probability ≥ 0.50 |
+| Change | inside `V12`, probability >= 0.50 |
 | No change | inside `V12`, probability < 0.50 |
 | Unresolved | outside `V12` |
 
@@ -312,15 +349,15 @@ The paper's responsible-use boundary applies to any deployment of this code: the
 
 ## Experiment data and manuscript values
 
-`reference_data/` holds the experiment outputs: 660 tile records over six cities, 480 in the source pool and 180 held out, leave-one-city-out folds over Dakar, Dar es Salaam, Douala, Garoua, Kigali and Yaounde, few-shot registries for K = 10, 25 and 50, run records, predictions, metrics, annotation audit assets, and the QF1 to QF7 figures. `reference_complements/` adds the deterministic fields derived from those arrays — refined cloud maps, visibility masks, the 16 by 16 support computation, gates, unresolved-positive maps and error maps — documented per record in `reference_complements/manifests/`.
+`reference_data/` holds the experiment outputs: 660 tile records over six cities, 480 in the source pool and 180 held out, leave-one-city-out folds over Dakar, Dar es Salaam, Douala, Garoua, Kigali and Yaounde, few-shot registries for K = 10, 25 and 50, run records, predictions, metrics, annotation audit assets, and the QF1 to QF7 figures. `reference_complements/` adds the deterministic fields derived from those arrays, namely refined cloud maps, visibility masks, the 16 by 16 support computation, gates, unresolved-positive maps and error maps, documented per record in `reference_complements/manifests/`.
 
-Every number reported in the paper is derived from the frozen tables under `manuscript/results/source_tables/`, which are byte-identical to the corresponding tables in `reference_data/experiment_benchmark/results/`:
+The tables under `manuscript/results/source_tables/` are the frozen record of the reported results, byte-identical to the corresponding tables in `reference_data/experiment_benchmark/results/`. `build_values.py` derives every value in the manuscript from them:
 
 ```bash
 python manuscript/scripts/build_values.py
 ```
 
-This regenerates `values.json`, `values.tex`, `macro_map.json` and `source_map.csv` — 187 values. `source_map.csv` maps each manuscript macro to the exact table it comes from, and `VALUE_CLASSIFICATION.csv` records whether a value is a point estimate, a confidence-interval bound or a derived quantity.
+This regenerates `values.json`, `values.tex`, `macro_map.json` and `source_map.csv`, 187 values in total. `source_map.csv` maps each manuscript macro to the exact table it comes from, and `VALUE_CLASSIFICATION.csv` records whether a value is a point estimate, a confidence-interval bound or a derived quantity.
 
 ## Figures
 
